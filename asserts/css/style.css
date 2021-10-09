@@ -1,0 +1,131 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    /* font-family có tính kế thừa */
+}
+/* 
+    1. Từ ngoài vào trong
+    2. Từ trên xuống dưới
+    3. Từ tổng quát đến chi tiết
+*/
+/* 
+1. Vị trí
+2. Kích thước (width, height)
+3. Màu sắc
+4. Kiểu dáng (vuông, tròn,...)
+ */
+#main {
+}
+
+
+#header {
+   height: 46px;
+   background-color: #000;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+}
+
+#nav {
+    display: inline-block;
+    /* inline-block: theo độ dài của nội dung */
+}
+
+#nav, ul {
+    /* list-type: mặc định là dấu chấm */
+    list-style: none;
+    /* ul có tính chất block nên kế thừa hết chiều ngang */
+}
+
+#nav li {
+    position: relative;
+}
+#nav > li {
+    display: inline-block;  
+}
+
+#nav > li > a {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#nav li a {
+     /* thẻ a đã có tính inline tuy nhiên ko có block
+    cho nên thêm block để khi hover có màu full thẻ a   
+    */
+    display: block;
+    line-height: 46px;
+    padding: 0 24px;
+    text-decoration: none;
+}
+  /* > : con trực tiếp */
+  /* hover li để tránh lỗi */
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav .subnav {
+    display: none;
+     /* subnav là con của li */
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* top: 100% / 46px (trong trường hợp mặc định nó không chuẩn */
+    top: 100%;
+    left: 0;
+}
+
+#nav .subnav a {
+    color: #000;
+    line-height: 38px;
+    padding: 0 16px;
+}
+
+#nav .nav-icon {
+    font-size: 12px;
+}
+
+#header .search-btn {
+    /* do kế thừa thuộc tính block nên 
+    nó chiếm toàn bộ width, phải thêm thuộc tính float*/
+    float: right;
+    cursor: pointer;
+}
+
+#header .search-icon {
+    color: #fff;
+    line-height: 46px;
+    padding: 0 24px;
+}
+
+#header .search-btn:hover {
+    background-color: #f44336;
+}
+
+#slider {
+    height: 500px;
+    background-color: #333;
+    margin-top: 46px;
+}
+
+#content {
+
+}
+
+#footer {
+
+}
